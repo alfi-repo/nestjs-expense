@@ -1,0 +1,71 @@
+@baseUrl = http://localhost:3000
+
+###
+
+# @name getAllIncomeReports
+GET {{baseUrl}}/reports/income HTTP/1.1
+
+###
+
+# @name getAllExpenseReports
+GET {{baseUrl}}/reports/expense HTTP/1.1
+
+###
+
+# @name createIncomeReport
+POST {{baseUrl}}/reports/income HTTP/1.1
+Content-Type: application/json
+
+{
+    "source":"Bonus",
+    "amount":100
+}
+
+###
+
+# @name createExpenseReport
+POST {{baseUrl}}/reports/expense HTTP/1.1
+Content-Type: application/json
+
+{
+    "source":"Food",
+    "amount":200
+}
+
+###
+
+# @name updateIncomeReport
+PUT {{baseUrl}}/reports/income/6ad16790-9da1-4b1f-9c97-89747c10b36d HTTP/1.1
+Content-Type: application/json
+
+{
+    "amount":10000
+}
+
+###
+
+# @name updateExpenseReport
+PUT {{baseUrl}}/reports/expense/39a1c754-4c66-48f5-b28a-298bba00e11d HTTP/1.1
+Content-Type: application/json
+
+{
+    "amount":333
+}
+
+###
+
+# @name deleteIncomeReport
+DELETE {{baseUrl}}/reports/income/6ad16790-9da1-4b1f-9c97-89747c10b36d HTTP/1.1
+
+
+###
+
+# @name deleteExpenseReport
+DELETE {{baseUrl}}/reports/expense/39a1c754-4c66-48f5-b28a-298bba00e11d HTTP/1.1
+
+###
+
+# @name getSummaryReport
+GET {{baseUrl}}/summaries HTTP/1.1
+
+###
